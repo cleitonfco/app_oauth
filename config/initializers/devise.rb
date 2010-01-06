@@ -12,17 +12,17 @@ Devise.setup do |config|
 
   # Invoke `rake secret` and use the printed value to setup a pepper to generate
   # the encrypted password. By default no pepper is used.
-  # config.pepper = "rake secret output"
+  config.pepper = "7051cbb91c2f4751b898c396c728a424330136ee2ed3c5b5a602747257b567e2ae91b8e8cbd9625c7c4fbe7f635ab95f9eb6f934d474a6e6b41739b3ab8be045"
 
   # Configure how many times you want the password is reencrypted. Default is 10.
-  # config.stretches = 10
+  config.stretches = 20
 
   # Define which will be the encryption algorithm. Supported algorithms are :sha1
   # (default) and :sha512. Devise also supports encryptors from others authentication
   # frameworks as :clearance_sha1, :authlogic_sha512 (then you should set stretches
   # above to 20 for default behavior) and :restful_authentication_sha1 (then you
   # should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  # config.encryptor = :sha1
+  config.encryptor = :authlogic_sha512
 
   # Configure which keys are used when authenticating an user. By default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -33,21 +33,20 @@ Devise.setup do |config|
 
   # The time you want give to your user to confirm his account. During this time
   # he will be able to access your application without confirming. Default is nil.
-  # config.confirm_within = 2.days
+  config.confirm_within = 2.days
 
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 10.years
 
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again.
-  # config.timeout_in = 10.minutes
+  config.timeout_in = 60.minutes
 
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "please-change-me@config-initializers-devise.com"
+  config.mailer_sender = "app_oauth@cleitonfco.com.br"
 
-  # Load and configure the ORM. Supports :active_record, :data_mapper and :mongo_mapper.
-  # require 'devise/orm/mongo_mapper'
-  # config.orm = :mongo_mapper
+  # Configure the ORM. Supports :active_record, :data_mapper and :mongo_mapper.
+  config.orm = :active_record
 
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "sessions/users/new". It's turned off by default because it's slower if you

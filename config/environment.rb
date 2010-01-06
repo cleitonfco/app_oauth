@@ -12,5 +12,3 @@ Rails::Initializer.run do |config|
 
   config.time_zone = 'Brasilia'
 end
-
-DeviseMailer.sender = "app_oauth@cleitonfco.com.br"
