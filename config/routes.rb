@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.devise_for :users, :as => "usuarios", :path_names => { :new => 'criar', :edit => 'editar', :sign_in => 'entrar', :sign_out => 'sair', :password => 'senha', :confirmation => 'confirmacao' }
+  map.devise_for :users
 
   map.resources :oauth_clients
 
